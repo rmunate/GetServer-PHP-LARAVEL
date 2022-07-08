@@ -106,7 +106,7 @@ function messageOS(){
 ## Desarrollador
 
 Ingeniero, Raúl Mauricio Uñate Castro
-sacon-raulmauricio@hotmail.com
+raulmauriciounate@gmail.com
 
 ## Licencia
 MIT
