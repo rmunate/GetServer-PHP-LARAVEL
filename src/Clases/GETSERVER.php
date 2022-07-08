@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Clases;
+
  /**
  * --------------------------------------------------------------------------
  * MANEJO DE VARIABLES DEL SERVIDOR
@@ -11,8 +13,7 @@
  * --------------------------------------------------------------------------
  *
  * AUTOR: ING. RAUL MAURICIO UÑATE CASTRO
- * FECHA: 25-11-2021
- * V: 1.0.0
+ * V: 1.0.1
  * STATIC::CLASS
  *
  * METODOS USO ESTATICO
@@ -67,16 +68,15 @@
  *
  */
 
-namespace App\Clases;
-
 class GETSERVER{
 
-    #======== IDENTIFICACION SISTEMA OPERATIVO =========#
+    # ███████████████████████████████ #
+    # IDENTIFICADOR SISTEMA OPERATIVO #
+    # ███████████████████████████████ #
 
     /**
      * Retorna TRUE si el usuario se está conectando al sistema desde un IPhone.
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function is_iPhone(){
 
@@ -96,7 +96,7 @@ class GETSERVER{
     /**
      * Retorna TRUE si el usuario se está conectando al sistema desde un MAC.
      *
-     * @return BOOL
+     * @return Bool
      */
     public static function is_Macintosh(){
 
@@ -115,8 +115,7 @@ class GETSERVER{
 
     /**
      * Retorna TRUE si el usuario se está conectando al sistema desde un Linux (PC o Sistemas Android).
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function is_Linux(){
 
@@ -135,8 +134,7 @@ class GETSERVER{
 
     /**
      * Retorna TRUE si el usuario se está conectando al sistema desde un Android.
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function is_Android(){
 
@@ -155,8 +153,7 @@ class GETSERVER{
 
     /**
      * Retorna TRUE si el usuario se está conectando al sistema desde un Windows.
-     *
-     * @return BOOL
+     * @return Bool
      */
     public static function is_Windows(){
 
@@ -173,12 +170,13 @@ class GETSERVER{
 
     }
 
-    #======== IDENTIFICACION NAVEGADOR =========#
+    # ███████████████████████ #
+    # IDENTIFICADOR NAVEGADOR #
+    # ███████████████████████ #
 
     /**
      * Retorna un objeto con los datos del navegador en uso.
-     *
-     * @return OBJECT
+     * @return Object
      */
     public static function get_Browser(){
 
@@ -252,12 +250,13 @@ class GETSERVER{
         ];
     }
 
-    #======== SERVER DATA UNIQUE =========#
+    # ███████████████████████ #
+    #   SERVER DATA UNIQUE    #
+    # ███████████████████████ #
 
     /**
      * Ejemplo Return: "www-data".
-     *
-     * @return STRING
+     * @return String
      */
     public static function user(){
 
@@ -272,8 +271,7 @@ class GETSERVER{
 
     /**
      * Ejemplo Return: "/var/www".
-     *
-     * @return STRING
+     * @return String
      */
     public static function home(){
 
@@ -288,8 +286,7 @@ class GETSERVER{
 
     /**
      * Contiene la ruta del script actual. Esto es de utilidad para las páginas que necesiten apuntarse a si mismas. La constante __FILE__ contiene la ruta absoluta y el nombre del archivo actual incluido.
-     *
-     * @return STRING
+     * @return String
      */
     public static function script_name(){
 
@@ -304,8 +301,7 @@ class GETSERVER{
 
     /**
      * La URI que se empleó para acceder a la página. Por ejemplo: '/index.html'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function request_uri(){
 
@@ -320,13 +316,12 @@ class GETSERVER{
 
     /**
      * Si existe, la cadena de la consulta de la petición de la página.
-     *
-     * @return STRING
+     * @return String
      */
     public static function query_string(){
 
-        if (isset($_SERVER['QUERY_STRING'])) {
-            $response = $_SERVER['QUERY_STRING'];
+        if (isset($_SERVER['QUERY_String'])) {
+            $response = $_SERVER['QUERY_String'];
         } else {
             $response = NULL;
         }
@@ -336,8 +331,7 @@ class GETSERVER{
 
     /**
      * Método de petición empleado para acceder a la página, por ejemplo 'GET', 'HEAD', 'POST', 'PUT'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function request_method(){
 
@@ -352,8 +346,7 @@ class GETSERVER{
 
     /**
      * Nombre y número de revisión del protocolo de información a través del cual la página es solicitada, por ejemplo 'HTTP/1.0'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_protocol(){
 
@@ -368,8 +361,7 @@ class GETSERVER{
 
     /**
      * Número de revisión de la especificación CGI que está empleando el servidor, por ejemplo 'CGI/1.1'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function gateway_interface(){
 
@@ -384,8 +376,7 @@ class GETSERVER{
 
     /**
      * URL definitica de la petición.
-     *
-     * @return STRING
+     * @return String
      */
     public static function redirect_url(){
 
@@ -400,8 +391,7 @@ class GETSERVER{
 
     /**
      * El puerto empleado por la máquina del usuario para comunicarse con el servidor web.
-     *
-     * @return STRING
+     * @return String
      */
     public static function remote_port(){
 
@@ -416,8 +406,7 @@ class GETSERVER{
 
     /**
      * La ruta del script ejecutándose actualmente en forma absoluta.
-     *
-     * @return STRING
+     * @return String
      */
     public static function script_filename(){
 
@@ -432,8 +421,7 @@ class GETSERVER{
 
     /**
      * El valor dado a la directiva SERVER_ADMIN (de Apache) en el archivo de configuración del servidor web. Si el script se está ejecutando en un host virtual, el valor dado será el definido para dicho host virtual.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_admin(){
 
@@ -448,8 +436,7 @@ class GETSERVER{
 
     /**
      * La ruta del script ejecutándose actualmente hasta la carpeta sin ficehero.
-     *
-     * @return STRING
+     * @return String
      */
     public static function context_document_root(){
 
@@ -464,8 +451,7 @@ class GETSERVER{
 
     /**
      * Metodo sin Documentacion nueva version Apache.
-     *
-     * @return STRING
+     * @return String
      */
     public static function context_prefix(){
 
@@ -480,8 +466,7 @@ class GETSERVER{
 
     /**
      * Retorna HTTP o HTTPS.
-     *
-     * @return STRING
+     * @return String
      */
     public static function request_scheme(){
 
@@ -496,8 +481,7 @@ class GETSERVER{
 
     /**
      * El directorio raíz de documentos del servidor en el cual se está ejecutando el script actual, según está definida en el archivo de configuración del servidor.
-     *
-     * @return STRING
+     * @return String
      */
     public static function document_root(){
 
@@ -512,8 +496,7 @@ class GETSERVER{
 
     /**
      * La dirección IP desde la cual está viendo la página actual el usuario.
-     *
-     * @return STRING
+     * @return String
      */
     public static function remote_addr(){
 
@@ -528,8 +511,7 @@ class GETSERVER{
 
     /**
      * El puerto de la máquina del servidor usado por el servidor web para la comunicación. Para las configuraciones por omisión, el valor será '80'; el empleo de SSL, por ejemplo, cambiará dicho valor al valor definido para el puerto HTTP seguro.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_port(){
 
@@ -544,8 +526,7 @@ class GETSERVER{
 
     /**
      * La dirección IP del servidor donde se está ejecutando actualmente el script.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_addr(){
 
@@ -560,8 +541,7 @@ class GETSERVER{
 
     /**
      * El nombre del host del servidor donde se está ejecutando actualmente el script. Si el script se ejecuta en un host virtual se obtendrá el valor del nombre definido para dicho host virtual.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_name(){
 
@@ -576,8 +556,7 @@ class GETSERVER{
 
     /**
      * Cadena de identificación del servidor dada en las cabeceras de respuesta a las peticiones.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_software(){
 
@@ -592,8 +571,7 @@ class GETSERVER{
 
     /**
      * Cadena que contiene la versión del servidor y el nombre del host virtual que son añadidas a las páginas generadas por el servidor, si esta habilitada esta funcionalidad.
-     *
-     * @return STRING
+     * @return String
      */
     public static function server_signature(){
 
@@ -608,8 +586,7 @@ class GETSERVER{
 
     /**
      * Retorno de directorio bin
-     *
-     * @return STRING
+     * @return String
      */
     public static function path(){
 
@@ -624,8 +601,7 @@ class GETSERVER{
 
     /**
      * Contiene el valor bruto del encabezado 'Cookie' enviado por el agente de usuario.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_cookie(){
 
@@ -640,8 +616,7 @@ class GETSERVER{
 
     /**
      * Contenido de la cabecera Accept-Language: de la petición actual, si existe. Por ejemplo: 'en'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_accept_language(){
 
@@ -656,8 +631,7 @@ class GETSERVER{
 
     /**
      * Contenido de la cabecera Accept-Encoding: de la petición actual, si existe. Por ejemplo: 'gzip'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_accept_encoding(){
 
@@ -672,8 +646,7 @@ class GETSERVER{
 
     /**
      * Por ejemplo: 'document'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_fetch_dest(){
 
@@ -688,8 +661,7 @@ class GETSERVER{
 
     /**
      * Por ejemplo: '?1'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_fetch_user(){
 
@@ -704,8 +676,7 @@ class GETSERVER{
 
     /**
      * Por ejemplo: 'navigate'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_fetch_mode(){
 
@@ -720,8 +691,7 @@ class GETSERVER{
 
     /**
      * Por ejemplo: 'none'.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_fetch_site(){
 
@@ -736,8 +706,7 @@ class GETSERVER{
 
     /**
      * Contenido de la cabecera Accept: de la petición actual, si existe.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_accept(){
 
@@ -752,8 +721,7 @@ class GETSERVER{
 
     /**
      * Contenido de la cabecera User-Agent: de la petición actual, si existe. Consiste en una cadena que indica el agente de usuario empleado para acceder a la pagina. Un ejemplo típico es: Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586). Entre otras opciones, puede emplear dicho valor con get_browser() para personalizar el resultado de la salida de la página en función de las capacidades del agente de usuario empleado.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_user_agent(){
 
@@ -768,8 +736,7 @@ class GETSERVER{
 
     /**
      * Solicitudes inseguras de actualización http
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_upgrade_insecure_requests(){
 
@@ -784,15 +751,14 @@ class GETSERVER{
 
     /**
      * Plataforma de conexion del usuario
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_ch_ua_platform(){
 
         if (isset($_SERVER['HTTP_SEC_CH_UA_PLATFORM'])) {
 
             $preResponse = $_SERVER['HTTP_SEC_CH_UA_PLATFORM'];
-            $preResponse = filter_var($preResponse, FILTER_SANITIZE_STRING);
+            $preResponse = filter_var($preResponse, FILTER_SANITIZE_String);
             $preResponse = filter_var($preResponse, FILTER_SANITIZE_URL);
             $response = $preResponse;
         } else {
@@ -804,8 +770,7 @@ class GETSERVER{
 
     /**
      * Conexion movil a la plataforma
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_sec_ch_ua_mobile(){
 
@@ -820,8 +785,7 @@ class GETSERVER{
 
     /**
      * Contenido de la cabecera Host: de la petición actual, si existe.
-     *
-     * @return STRING
+     * @return String
      */
     public static function http_host(){
 
@@ -836,8 +800,7 @@ class GETSERVER{
 
     /**
      * El timestamp del inicio de la solicitud, con precisión microsegundo. Disponible desde PHP 5.4.0.
-     *
-     * @return STRING
+     * @return String
      */
     public static function request_time_float(){
 
@@ -852,8 +815,7 @@ class GETSERVER{
 
     /**
      * Fecha Unix de inicio de la petición. Disponible desde PHP 5.1.0.
-     *
-     * @return STRING
+     * @return String
      */
     public static function request_time(){
 
@@ -866,12 +828,13 @@ class GETSERVER{
 
     }
 
-    #======== SERVER DATA OBJECT =========#
+    # ███████████████████████ #
+    #   SERVER DATA OBJECT    #
+    # ███████████████████████ #
 
     /**
      * Retorno de un objeto con todos los datos de las variables globales del servidor.
-     *
-     * @return OBJECT
+     * @return Object
      */
     public static function all_server(){
         $response = (object)$_SERVER;
@@ -880,8 +843,7 @@ class GETSERVER{
 
     /**
      * Retorno de un objeto con los datos de las variables globales del servidor sin contemplar las variables del ENV de Laravel.
-     *
-     * @return OBJECT
+     * @return Object
      */
     public static function server(){
 
@@ -902,12 +864,11 @@ class GETSERVER{
 
     /**
      * Retorno de un objeto con los datos de las variables en entorno de Laravel (Expone el contenido del ENV).
-     *
-     * @return OBJECT
+     * @return Object
      */
     public static function env(){
 
-        $chunk  =   false;
+        $chunk = false;
         $count = 0;
         foreach ($_SERVER as $dato => $valor) {
             /* Definir donde Separar el Arreglo */
@@ -926,7 +887,7 @@ class GETSERVER{
             $data = array_merge($data, $arrayResponse[$i]);
         }
 
-        return (object)$data;
+        return (object) $data;
     }
 
 }
